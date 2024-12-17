@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: carts-dep
+  name: carts-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: carts-dep
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: carts-dep
+    spec:
+      containers:
+      - image: docker.io/library/nginx
+        name: nginx
+        ports:
+        - containerPort: 80
